@@ -1,0 +1,1107 @@
+/**
+ * Lasso Leader Public Styles - Engel & Völkers Atlanta Branding
+ * Updated to be more targeted and avoid affecting other pages
+ */
+
+/* === EV Brand Color Variables === */
+:root {
+    --ev-red: #C41E3A;
+    --ev-red-hover: #A61729;
+    --ev-red-light: #E6394F;
+    --ev-red-dark: #8B1426;
+    --ev-white: #FFFFFF;
+    --ev-light-gray: #F8F9FA;
+    --ev-medium-gray: #E9ECEF;
+    --ev-dark-gray: #495057;
+    --ev-black: #212529;
+    --ev-accent-blue: #0073AA;
+    --ev-accent-blue-hover: #005177;
+    --ev-text-primary: #212529;
+    --ev-text-secondary: #6C757D;
+    --ev-border-light: #DEE2E6;
+    --ev-shadow: 0 4px 12px rgba(196, 30, 58, 0.1);
+    --ev-shadow-hover: 0 8px 24px rgba(196, 30, 58, 0.15);
+    --ev-font-primary: 'Helvetica Neue', Arial, sans-serif;
+    --ev-font-secondary: Georgia, serif;
+}
+
+/* === Base Styling for EV Pages ONLY === */
+.lasso-leader-frontend,
+.ev-branded {
+    font-family: var(--ev-font-primary);
+    line-height: 1.6;
+    color: var(--ev-text-primary);
+}
+
+/* === Project Directory Styling === */
+.lasso-onsite-directory {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: var(--ev-white);
+}
+
+.lasso-onsite-directory h2 {
+    text-align: center;
+    color: var(--ev-red);
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    font-family: var(--ev-font-secondary);
+    position: relative;
+}
+
+.lasso-onsite-directory h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--ev-red);
+    margin: 20px auto 0;
+}
+
+.lasso-project-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin-top: 40px;
+}
+
+.project-card {
+    background: var(--ev-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--ev-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--ev-border-light);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--ev-shadow-hover);
+}
+
+.project-card .project-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-card .project-details {
+    padding: 30px;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ev-text-primary);
+}
+
+.project-card h3 a {
+    text-decoration: none;
+    color: var(--ev-text-primary);
+    transition: color 0.3s ease;
+}
+
+.project-card h3 a:hover {
+    color: var(--ev-red);
+}
+
+.project-card p {
+    color: var(--ev-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* Make project images clickable with hover effect */
+.project-card .project-image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-card .project-image a {
+    display: block;
+    text-decoration: none;
+}
+
+.project-card .project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(196, 30, 58, 0);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.project-card:hover .project-image::after {
+    background: rgba(196, 30, 58, 0.1);
+}
+
+.project-card a[href*="View Project"],
+.project-card .project-select-button {
+    display: inline-block;
+    background: var(--ev-red);
+    color: var(--ev-white);
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 160px;
+    text-align: center;
+}
+
+.project-card a[href*="View Project"]:hover,
+.project-card .project-select-button:hover {
+    background: var(--ev-red-hover);
+    transform: translateY(-2px);
+    color: var(--ev-white);
+    text-decoration: none;
+}
+
+/* === Agent Listing Styling === */
+.lasso-agent-list {
+    margin-top: 60px;
+    clear: both;
+    background: var(--ev-light-gray);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--ev-border-light);
+}
+
+.lasso-agent-list h3 {
+    margin-top: 0;
+    color: var(--ev-red);
+    border-bottom: 3px solid var(--ev-red);
+    padding-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: var(--ev-font-secondary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.agents-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.agent-card {
+    background: var(--ev-white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--ev-shadow);
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    border: 1px solid var(--ev-border-light);
+}
+
+.agent-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ev-shadow-hover);
+}
+
+/* Make agent photos clickable with no underline */
+.agent-photo a {
+    text-decoration: none !important;
+    display: block;
+    border: none;
+}
+
+.agent-photo a:hover {
+    text-decoration: none !important;
+}
+
+.agent-photo {
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.agent-photo:hover {
+    transform: scale(1.05);
+}
+
+.agent-photo img {
+    border-radius: 12px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid var(--ev-medium-gray);
+    transition: border-color 0.3s ease;
+}
+
+.agent-card:hover .agent-photo img {
+    border-color: var(--ev-red);
+}
+
+.agent-details {
+    flex-grow: 1;
+}
+
+.agent-details h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--ev-text-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.agent-details .agent-title {
+    color: var(--ev-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.agent-bio {
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: var(--ev-text-secondary);
+}
+
+/* Fix agent button text decoration */
+.lasso-register-button {
+    display: inline-block;
+    background: var(--ev-red);
+    color: var(--ev-white);
+    padding: 14px 28px;
+    text-decoration: none !important;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 160px;
+    text-align: center;
+}
+
+.lasso-register-button:hover {
+    background: var(--ev-red-hover);
+    transform: translateY(-2px);
+    color: var(--ev-white) !important;
+    text-decoration: none !important;
+}
+
+.lasso-register-button:focus,
+.lasso-register-button:active,
+.lasso-register-button:visited {
+    color: var(--ev-white) !important;
+    text-decoration: none !important;
+}
+
+/* === Registration Status Styling - TOP of page === */
+.lasso-registration-status {
+    border: 1px solid var(--ev-border-light);
+    padding: 20px 30px;
+    margin: 20px auto 30px auto;
+    background: var(--ev-white);
+    border-radius: 12px;
+    border-left: 5px solid var(--ev-red);
+    box-shadow: var(--ev-shadow);
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.lasso-registration-status h4 {
+    margin: 0 0 15px 0;
+    color: var(--ev-red);
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: var(--ev-font-secondary);
+}
+
+.lasso-registration-status .status-info {
+    display: block;
+    margin: 0;
+}
+
+.lasso-registration-status .project-name {
+    font-weight: 600;
+    color: var(--ev-text-primary);
+    font-size: 1.4rem;
+    margin-right: 10px;
+    font-family: var(--ev-font-secondary);
+}
+
+.lasso-registration-status .agent-name {
+    color: var(--ev-text-secondary);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* === REGISTRATION FORM PAGE LAYOUT === */
+
+/* Create a wrapper for registration pages */
+body:has(.lasso-registration-status) {
+    background: var(--ev-light-gray);
+    padding: 0;
+}
+
+/* Ensure registration status appears first */
+body:has(.lasso-registration-status) .site-main,
+body:has(.lasso-registration-status) .elementor-section,
+body:has(.lasso-registration-status) .entry-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    background: var(--ev-light-gray);
+}
+
+/* Force registration status to appear at the top */
+.lasso-registration-status {
+    order: -1;
+    margin-top: 0 !important;
+}
+
+/* Form container styling */
+.gform_wrapper {
+    order: 1;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 40px;
+    background: var(--ev-white);
+    border-radius: 12px;
+    box-shadow: var(--ev-shadow);
+    border: 1px solid var(--ev-border-light);
+}
+
+/* Ensure form title is properly styled */
+.gform_wrapper .gform_title,
+.entry-content h1,
+.entry-content h2 {
+    text-align: center;
+    color: var(--ev-red);
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: var(--ev-font-secondary);
+    border-bottom: 3px solid var(--ev-red);
+    padding-bottom: 15px;
+    order: 0;
+}
+
+/* === REGISTRATION FORM STYLING - Only target pages with registration forms === */
+
+/* Only style forms on pages that contain registration parameters */
+body[class*="registration"] .gform_wrapper,
+.page-template-default .gform_wrapper,
+body.page .gform_wrapper:has(.lasso-registration-status) {
+    max-width: 800px;
+    margin: 20px auto 40px auto;
+    padding: 40px;
+    background: var(--ev-white);
+    border-radius: 12px;
+    box-shadow: var(--ev-shadow);
+    border: 1px solid var(--ev-border-light);
+}
+
+/* Only style page background when registration status is present */
+body:has(.lasso-registration-status) {
+    background: var(--ev-light-gray);
+}
+
+/* === Custom Post Type Styling === */
+.lasso-custom-post {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: var(--ev-white);
+    box-shadow: var(--ev-shadow);
+    border-radius: 12px;
+    border: 1px solid var(--ev-border-light);
+}
+
+.lasso-custom-post h1 {
+    color: var(--ev-red);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--ev-red);
+    font-size: 2.2rem;
+    font-weight: 300;
+    font-family: var(--ev-font-secondary);
+}
+
+.lasso-custom-post .post-meta {
+    background: var(--ev-light-gray);
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 5px solid var(--ev-red);
+    border-radius: 8px;
+}
+
+.lasso-custom-post .post-meta h3 {
+    margin-top: 0;
+    color: var(--ev-red);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.lasso-agent-projects-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lasso-agent-projects-list li {
+    background: var(--ev-white);
+    margin: 15px 0;
+    padding: 20px;
+    border: 1px solid var(--ev-border-light);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.lasso-agent-projects-list li:hover {
+    border-color: var(--ev-red);
+    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.1);
+}
+
+.lasso-agent-projects-list a {
+    text-decoration: none;
+    color: var(--ev-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.lasso-agent-projects-list a:hover {
+    color: var(--ev-red-hover);
+}
+
+.lasso-agent-projects-list p {
+    margin: 10px 0 0 0;
+    color: var(--ev-text-secondary);
+    line-height: 1.6;
+}
+
+/* === Error and No Content States === */
+.lasso-error,
+.lasso-no-projects {
+    text-align: center;
+    padding: 60px 40px;
+    background: var(--ev-light-gray);
+    border-radius: 12px;
+    border: 1px solid var(--ev-border-light);
+    color: var(--ev-text-secondary);
+    font-size: 1.1rem;
+}
+
+/* === FORM STYLING - EV BRANDING === */
+
+/* === Enhanced Form Submit Button Styling === */
+.gform_button,
+.gform_wrapper .gform_button,
+.gform_wrapper input[type="submit"],
+.gform_wrapper button[type="submit"],
+.wpcf7-form input[type="submit"],
+.wpcf7-submit,
+input[name="gform_submit_button_1"],
+input[value="Submit"],
+button[type="submit"],
+.lasso-form-submit,
+.elementor-button {
+    background: var(--ev-red) !important;
+    color: var(--ev-white) !important;
+    border: none !important;
+    padding: 16px 32px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    font-family: var(--ev-font-primary) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.2) !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    line-height: 1.2 !important;
+    min-width: 140px !important;
+    text-align: center !important;
+}
+
+/* Enhanced hover states */
+.gform_button:hover,
+.gform_wrapper .gform_button:hover,
+.gform_wrapper input[type="submit"]:hover,
+.gform_wrapper button[type="submit"]:hover,
+.wpcf7-form input[type="submit"]:hover,
+.wpcf7-submit:hover,
+input[name="gform_submit_button_1"]:hover,
+input[value="Submit"]:hover,
+button[type="submit"]:hover,
+.lasso-form-submit:hover,
+.elementor-button:hover {
+    background: var(--ev-red-hover) !important;
+    color: var(--ev-white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3) !important;
+}
+
+/* Focus states for accessibility */
+.gform_button:focus,
+.gform_wrapper .gform_button:focus,
+.gform_wrapper input[type="submit"]:focus,
+.gform_wrapper button[type="submit"]:focus,
+.wpcf7-form input[type="submit"]:focus,
+.wpcf7-submit:focus,
+input[name="gform_submit_button_1"]:focus,
+input[value="Submit"]:focus,
+button[type="submit"]:focus,
+.lasso-form-submit:focus,
+.elementor-button:focus {
+    outline: 3px solid rgba(196, 30, 58, 0.4) !important;
+    outline-offset: 2px !important;
+    background: var(--ev-red-hover) !important;
+}
+
+/* === Enhanced Form Field Styling === */
+.gform_wrapper input[type="text"],
+.gform_wrapper input[type="email"],
+.gform_wrapper input[type="tel"],
+.gform_wrapper input[type="url"],
+.gform_wrapper input[type="password"],
+.gform_wrapper input[type="number"],
+.gform_wrapper textarea,
+.gform_wrapper select,
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea,
+.wpcf7-form select,
+.elementor-form .elementor-field-textual {
+    border: 2px solid var(--ev-border-light) !important;
+    border-radius: 6px !important;
+    padding: 12px 16px !important;
+    font-size: 1rem !important;
+    font-family: var(--ev-font-primary) !important;
+    transition: all 0.3s ease !important;
+    background: var(--ev-white) !important;
+    color: var(--ev-text-primary) !important;
+}
+
+/* Enhanced field focus states */
+.gform_wrapper input[type="text"]:focus,
+.gform_wrapper input[type="email"]:focus,
+.gform_wrapper input[type="tel"]:focus,
+.gform_wrapper input[type="url"]:focus,
+.gform_wrapper input[type="password"]:focus,
+.gform_wrapper input[type="number"]:focus,
+.gform_wrapper textarea:focus,
+.gform_wrapper select:focus,
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form textarea:focus,
+.wpcf7-form select:focus,
+.elementor-form .elementor-field-textual:focus {
+    border-color: var(--ev-red) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1) !important;
+}
+
+/* === Form Labels Styling === */
+.gform_wrapper .gfield_label,
+.gform_wrapper .gsection_title,
+.wpcf7-form label,
+.elementor-form .elementor-field-label {
+    color: var(--ev-text-primary) !important;
+    font-weight: 600 !important;
+    font-family: var(--ev-font-primary) !important;
+    margin-bottom: 8px !important;
+    font-size: 0.95rem !important;
+}
+
+/* === Required Field Asterisk === */
+.gform_wrapper .gfield_required {
+    color: var(--ev-red) !important;
+}
+
+/* === Form Validation Styling === */
+.gform_wrapper .gfield_error {
+    background: rgba(196, 30, 58, 0.05) !important;
+    border: 1px solid rgba(196, 30, 58, 0.2) !important;
+    border-radius: 6px !important;
+    padding: 15px !important;
+}
+
+.gform_wrapper .validation_error {
+    color: var(--ev-red) !important;
+    background: rgba(196, 30, 58, 0.1) !important;
+    border: 1px solid rgba(196, 30, 58, 0.3) !important;
+    border-radius: 6px !important;
+    padding: 15px !important;
+    margin-bottom: 20px !important;
+}
+
+/* === Radio Buttons and Checkboxes === */
+.gform_wrapper input[type="radio"],
+.gform_wrapper input[type="checkbox"] {
+    accent-color: var(--ev-red) !important;
+    transform: scale(1.1) !important;
+    margin-right: 8px !important;
+}
+
+/* === ORBITAL THEME OVERRIDES === */
+/* Target Gravity Forms Orbital theme specifically */
+.gform_wrapper.gravity-theme.gform-theme--orbital select,
+.gform_wrapper.gravity-theme select,
+.gform-theme--orbital select,
+.gform_wrapper[class*="orbital"] select,
+.gravity-theme select {
+    background-color: white !important;
+    color: #212529 !important;
+    border: 2px solid #DEE2E6 !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C41E3A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+}
+
+.gform_wrapper.gravity-theme.gform-theme--orbital select option,
+.gform_wrapper.gravity-theme select option,
+.gform-theme--orbital select option,
+.gform_wrapper[class*="orbital"] select option,
+.gravity-theme select option {
+    background-color: white !important;
+    background: white !important;
+    color: #212529 !important;
+    padding: 8px 12px !important;
+}
+
+/* Override Orbital theme's dark dropdown styling */
+.gform_wrapper.gform-theme--orbital .gfield--type-select .ginput_container_select::before,
+.gform_wrapper.gravity-theme .gfield--type-select .ginput_container_select::before {
+    display: none !important;
+}
+
+/* SUPER SPECIFIC DROPDOWN FIXES */
+/* Target Foundation framework and other conflicts */
+.gform_wrapper select,
+.gform_wrapper .gfield select,
+.gform_wrapper .ginput_container select,
+.gform_wrapper .ginput_container_select select,
+body .gform_wrapper select,
+html body .gform_wrapper select,
+.wpcf7-form select,
+.elementor-form select,
+select[class*="gfield"],
+select[id*="input"],
+.gform_body select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C41E3A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 16px !important;
+    background-color: white !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    color: #212529 !important;
+    border: 2px solid #DEE2E6 !important;
+    padding: 12px 16px !important;
+    font-size: 1rem !important;
+    font-family: 'Helvetica Neue', Arial, sans-serif !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ULTRA-SPECIFIC option styling to override Foundation */
+.gform_wrapper select option,
+.gform_wrapper .gfield select option,
+.gform_wrapper .ginput_container select option,
+.gform_wrapper .ginput_container_select select option,
+body .gform_wrapper select option,
+html body .gform_wrapper select option,
+.wpcf7-form select option,
+.elementor-form select option,
+select[class*="gfield"] option,
+select[id*="input"] option,
+.gform_body select option {
+    background-color: white !important;
+    background: white !important;
+    color: #212529 !important;
+    padding: 8px 12px !important;
+    font-size: 1rem !important;
+    font-family: 'Helvetica Neue', Arial, sans-serif !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Focus and hover states */
+.gform_wrapper select:focus,
+.gform_wrapper .gfield select:focus,
+.gform_wrapper .ginput_container select:focus,
+body .gform_wrapper select:focus,
+html body .gform_wrapper select:focus {
+    background-color: white !important;
+    color: #212529 !important;
+    border-color: #C41E3A !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1) !important;
+}
+
+/* Override Foundation/theme dark styling specifically */
+.foundation-theme select,
+.foundation select,
+[class*="foundation"] select,
+[class*="gform"] select {
+    background-color: white !important;
+    color: #212529 !important;
+}
+
+.foundation-theme select option,
+.foundation select option,
+[class*="foundation"] select option,
+[class*="gform"] select option {
+    background-color: white !important;
+    background: white !important;
+    color: #212529 !important;
+}
+
+/* Nuclear option - target by attribute selectors */
+select[aria-invalid],
+select[data-js],
+select[class] {
+    background-color: white !important;
+    color: #212529 !important;
+}
+
+select[aria-invalid] option,
+select[data-js] option,
+select[class] option {
+    background-color: white !important;
+    background: white !important;
+    color: #212529 !important;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .lasso-onsite-directory {
+        padding: 30px 15px;
+    }
+    
+    .lasso-onsite-directory h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .lasso-project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-card .project-details {
+        padding: 20px;
+    }
+    
+    .agent-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .agent-photo {
+        align-self: center;
+    }
+    
+    .lasso-custom-post {
+        margin: 30px auto;
+        padding: 25px;
+    }
+    
+    .lasso-custom-post h1 {
+        font-size: 1.8rem;
+    }
+    
+    .lasso-agent-list {
+        padding: 25px;
+    }
+    
+    .gform_button,
+    .gform_wrapper .gform_button,
+    .gform_wrapper input[type="submit"],
+    .gform_wrapper button[type="submit"],
+    .wpcf7-form input[type="submit"],
+    .wpcf7-submit,
+    input[name="gform_submit_button_1"],
+    input[value="Submit"],
+    button[type="submit"],
+    .lasso-form-submit,
+    .elementor-button {
+        width: 100% !important;
+        padding: 16px 20px !important;
+        font-size: 1rem !important;
+        margin-top: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .lasso-onsite-directory h2 {
+        font-size: 1.6rem;
+    }
+    
+    .project-card .project-details {
+        padding: 15px;
+    }
+    
+    .agent-card {
+        padding: 20px;
+    }
+    
+    .lasso-register-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* === Animation and Micro-Interactions === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card,
+.agent-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.project-card:nth-child(2) { animation-delay: 0.1s; }
+.project-card:nth-child(3) { animation-delay: 0.2s; }
+.project-card:nth-child(4) { animation-delay: 0.3s; }
+.project-card:nth-child(5) { animation-delay: 0.4s; }
+.project-card:nth-child(6) { animation-delay: 0.5s; }
+
+/* === Focus States for Accessibility === */
+.project-card a:focus,
+.lasso-register-button:focus,
+.lasso-agent-projects-list a:focus {
+    outline: 3px solid var(--ev-red);
+    outline-offset: 2px;
+}
+
+/**
+ * Minimal Additional CSS - Preserves Your Current Clean Design
+ * Add this to the END of your existing lasso-leader-public.css file
+ */
+
+/* === Missing Parameters State ONLY === */
+.lasso-registration-status.missing-params {
+    background: var(--ev-light-gray);
+    color: var(--ev-dark-gray);
+    border: 2px dashed var(--ev-red);
+    animation: missingParamsPulse 3s ease-in-out infinite;
+    /* Keep all your existing styles for normal state */
+}
+
+.lasso-registration-status.missing-params h4 {
+    color: var(--ev-red);
+}
+
+/* === Status Header and Icon === */
+.status-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+.status-header .status-icon {
+    font-size: 1.2rem;
+    border-radius: 50%;
+    padding: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ev-red);
+    color: var(--ev-white);
+}
+
+/* === Icon positioning for complete registration === */
+.lasso-registration-status.complete .status-header .status-icon,
+.lasso-registration-status:not(.missing-params) .status-header .status-icon {
+    background: var(--ev-red);
+    color: var(--ev-white);
+}
+
+/* === Status Message and Actions for Missing State === */
+.status-message {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.status-message p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--ev-text-secondary);
+    line-height: 1.6;
+}
+
+.status-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.status-actions .ev-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+    min-height: 44px;
+    background: var(--ev-red);
+    color: var(--ev-white);
+}
+
+.status-actions .ev-btn:hover {
+    background: var(--ev-red-hover);
+    transform: translateY(-2px);
+    color: var(--ev-white);
+    text-decoration: none;
+}
+
+/* === Form Hidden Message === */
+.lasso-form-hidden-message {
+    background: var(--ev-light-gray);
+    border: 1px solid var(--ev-border-light);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.lasso-form-hidden-message .form-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--ev-text-secondary);
+}
+
+.lasso-form-hidden-message .dashicons {
+    font-size: 1.2rem;
+    color: var(--ev-red);
+}
+
+.lasso-form-hidden-message p {
+    margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* === Animation === */
+@keyframes missingParamsPulse {
+    0%, 100% {
+        border-color: var(--ev-red);
+        opacity: 1;
+    }
+    50% {
+        border-color: rgba(196, 30, 58, 0.5);
+        opacity: 0.9;
+    }
+}
+
+/* === Mobile Responsiveness === */
+@media (max-width: 768px) {
+    .status-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .status-actions .ev-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/**
+ * Additional CSS for Warning State - Add to your existing CSS
+ */
+
+/* === Warning State for Invalid Project/Agent === */
+.lasso-registration-status.missing-params .status-icon.dashicons-warning {
+    background: #ff9800;
+    color: var(--ev-white);
+}
+
+.lasso-registration-status.missing-params p strong {
+    color: var(--ev-red);
+}
+
+/* === Enhanced Form Hiding === */
+.lasso-form-hidden-message {
+    border-left: 5px solid var(--ev-red);
+    background: var(--ev-light-gray);
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* === Ensure Complete State Uses Clean Layout === */
+.lasso-registration-status.complete .status-info {
+    display: block !important;
+    margin: 0;
+    text-align: center;
+}
+
+.lasso-registration-status.complete .project-name,
+.lasso-registration-status.complete .agent-name {
+    display: inline;
+    color: var(--ev-text-primary);
+    font-family: var(--ev-font-secondary);
+}
+
+.lasso-registration-status.complete .project-name {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+
+.lasso-registration-status.complete .agent-name {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ev-text-secondary);
+}

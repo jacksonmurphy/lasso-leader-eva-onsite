@@ -1,0 +1,65 @@
+/**
+ * Enhanced Field Mapping JavaScript for Lasso Leader
+ * Minimal version to test functionality
+ */
+
+jQuery(document).ready(function($) {
+    
+    console.log('Lasso JavaScript loaded');
+    console.log('jQuery version: ' + $.fn.jquery);
+    
+    // Test elements after page loads
+    setTimeout(function() {
+        console.log('Standard selects found: ' + $('.standard-field-select').length);
+        console.log('Question inputs found: ' + $('.question-id-input').length);
+        console.log('Form found: ' + $('#gform-settings').length);
+        console.log('All selects: ' + $('select').length);
+        console.log('All inputs: ' + $('input').length);
+        
+        if ($('.standard-field-select').length === 0) {
+            console.log('WARNING: No elements with standard-field-select class found');
+            console.log('Available select elements:');
+            $('select').each(function(i, el) {
+                console.log('Select ' + i + ': ' + el.className);
+            });
+        }
+    }, 3000);
+    
+    // Simple change handler
+    $(document).on('change', '.standard-field-select, .question-id-input, .question-type-select', function() {
+        console.log('Change detected on: ' + this.className);
+        console.log('New value: ' + $(this).val());
+        
+        // Show a simple indicator
+        if ($('.lasso-indicator').length === 0) {
+            $(this).closest('table').before('<div class="lasso-indicator" style="background: yellow; padding: 10px; margin: 10px 0;">Field changed - would auto-save here</div>');
+            
+            // Remove after 2 seconds
+            setTimeout(function() {
+                $('.lasso-indicator').remove();
+            }, 2000);
+        }
+    });
+    
+    // Clear button handler
+    $(document).on('click', '.mapping-clear-btn', function(e) {
+        e.preventDefault();
+        console.log('Clear button clicked');
+        
+        var fieldId = $(this).data('field-id');
+        var type = $(this).data('type');
+        var row = $('tr[data-field-id="' + fieldId + '"]');
+        
+        if (type === 'standard') {
+            row.find('.standard-field-select').val('');
+        } else if (type === 'question') {
+            row.find('.question-id-input, .question-type-select').val('');
+        }
+        
+        $(this).remove();
+        console.log('Clear completed');
+    });
+    
+    console.log('Lasso JavaScript setup complete');
+    
+});

@@ -1,0 +1,204 @@
+/* Lasso Leader - Gravity Forms Integration Styles */
+/* Version: 2.0 - Clean & Minimal */
+
+/* Status badges for better visual feedback */
+.lasso-pro-badge { 
+    background: #0073aa; 
+    color: white; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+    font-size: 11px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lasso-standard-badge { 
+    background: #72aee6; 
+    color: white; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+    font-size: 11px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lasso-error-badge { 
+    background: #d63638; 
+    color: white; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+    font-size: 11px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* API information styling */
+.lasso-api-info { 
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+}
+
+.lasso-api-info.error { 
+    color: #d63638; 
+    font-weight: 500;
+}
+
+.lasso-api-info.success {
+    color: #00a32a;
+    font-weight: 500;
+}
+
+/* Field mapping table enhancements */
+.lasso-mapping-table tr.mapped-standard { 
+    background-color: #f0f8ff; 
+    border-left: 3px solid #0073aa;
+}
+
+.lasso-mapping-table tr.mapped-question { 
+    background-color: #f8f0ff; 
+    border-left: 3px solid #7209b7;
+}
+
+.lasso-mapping-table tr.mapped-empty { 
+    opacity: 0.6; 
+}
+
+/* Mapping tools styling */
+.lasso-mapping-tools {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #e1e5e9;
+    border-radius: 4px;
+}
+
+.lasso-mapping-tools button { 
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+/* Status indicators for mapped fields */
+.lasso-field-status {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+.lasso-field-status.mapped {
+    background: #00a32a;
+}
+
+.lasso-field-status.unmapped {
+    background: #ddd;
+}
+
+.lasso-field-status.error {
+    background: #d63638;
+}
+
+/* Enhanced tooltips */
+.lasso-tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.lasso-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 5px;
+}
+
+.lasso-tooltip:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #333;
+    z-index: 1000;
+}
+
+/* Form field mapping specific styles */
+.lasso-field-mapping {
+    margin-top: 20px;
+}
+
+.lasso-field-mapping h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.lasso-field-mapping .description {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Quick action buttons */
+.lasso-quick-map-btn {
+    background: #f0f0f1;
+    border: 1px solid #c3c4c7;
+    border-radius: 3px;
+    color: #50575e;
+    font-size: 11px;
+    padding: 4px 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lasso-quick-map-btn:hover {
+    background: #0073aa;
+    border-color: #0073aa;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .lasso-mapping-tools {
+        text-align: center;
+    }
+    
+    .lasso-mapping-tools button {
+        margin: 5px;
+        display: block;
+        width: 100%;
+    }
+    
+    .lasso-tooltip:hover::after {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: normal;
+        max-width: 250px;
+    }
+}
+
+/* Integration with main admin styles */
+.gform-settings-panel .lasso-pro-badge,
+.gform-settings-panel .lasso-standard-badge,
+.gform-settings-panel .lasso-error-badge {
+    vertical-align: middle;
+    margin-left: 8px;
+}

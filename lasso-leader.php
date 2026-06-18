@@ -3,7 +3,7 @@
  * Plugin Name:       Lasso Leader
  * Plugin URI:        https://jacksonmurphy.com/lasso-leader
  * Description:       Connects Gravity Forms and Contact Form 7 submissions to Lasso CRM. Includes On-Site Registration features and automatic updates.
- * Version:           6.3.1
+ * Version:           6.3.2
  * Update URI:        https://github.com/jacksonmurphy/lasso-leader-eva-onsite
  * Author:            Jackson Murphy
  * Author URI:        https://jacksonmurphy.com/
@@ -17,9 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // --- DEFINE PLUGIN CONSTANTS ---
-define( 'LASSO_LEADER_VERSION', '6.3.1' );
+define( 'LASSO_LEADER_VERSION', '6.3.2' );
 define( 'LASSO_LEADER_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LASSO_LEADER_URL', plugin_dir_url( __FILE__ ) );
+
+// EVA auto-update smoke test marker.
 
 // Load license system first (before other functionality)
 require_once plugin_dir_path(__FILE__) . 'includes/class-lasso-license-manager.php';
